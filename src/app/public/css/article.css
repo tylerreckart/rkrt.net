@@ -71,6 +71,21 @@ article a {
   text-transform: uppercase;
 }
 
+.article--content>h2 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  font-size: 18pt;
+}
+
+.article--content>hr {
+  border: none;
+  height: 4px;
+  background: var(--gray);
+  margin: 20px 0;
+  opacity: 0.2;
+}
+
 .article--content>p {
   max-width: 720px;
 }
