@@ -67,7 +67,9 @@ nav a {
 }
 
 .nav--link {
+  display: block;
   font-family: "Obviously", sans-serif;
+  padding-top: 6px;
   padding-bottom: 8px;
   border-bottom: 6px solid rgba(255, 255, 255, 0);
 }
@@ -156,6 +158,10 @@ nav a {
     left: 0;
     right: 0;
     z-index: 20;
+  }
+  
+  .site-title h1 {
+    padding-bottom: 0;
   }
 
   nav {
@@ -257,6 +263,10 @@ nav a {
     flex-direction: row;
     padding: 24px 24px 20px 24px;
     justify-content: space-between;
+  }
+  
+  .site-title > h1 {
+    padding-bottom: 0px;
   }
 
   .site--title {
