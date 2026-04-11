@@ -19,7 +19,7 @@ function createPreview(body: string): string {
 
   if (paragraphs && paragraphs.length >= 2) {
     // Return first 2-3 paragraphs
-    const preview = paragraphs.slice(0, 3).join('\n');
+    const preview = paragraphs.slice(0, 2).join('\n');
     if (preview.length < 1500) {
       return preview;
     }
