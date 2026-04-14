@@ -1,12 +1,12 @@
 ---
 date: "April 10, 2026"
-title: "Claudius: A Lean Runtime for Agents"
+title: "Index: A Lean Runtime for Agents"
 description: A lightweight C++ agent orchestrator for the Claude API — raw TLS sockets, no dependencies, constitution-governed agents with three brevity levels, background loops, and persistent memory."
 published: true
 ---
 I talk to Claude a lot. It's part of my daily engineering workflow. It helps me think through projects, draft writing, and explore ideas. At some point I started wondering what it would look like to build my own interface to the API—something lean, opinionated, and designed around how I actually work rather than how someone else's TUI assumes I do.
 
-Claudius is the result. It's a lightweight agent orchestration runtime written in C++. No frameworks, no HTTP libraries, no dependency manager. It talks to the Claude API over raw TLS sockets, manages multiple agents with distinct personalities and goals, and runs as an interactive REPL, a TCP server, or a one-shot CLI. The whole thing currently sits at just over 3,000 lines of code.
+Index is the result. It's a lightweight agent orchestration runtime written in C++. No frameworks, no HTTP libraries, no dependency manager. It talks to the Claude API over raw TLS sockets, manages multiple agents with distinct personalities and goals, and runs as an interactive REPL, a TCP server, or a one-shot CLI. The whole thing currently sits at just over 3,000 lines of code.
 
 ## Why?
 
@@ -14,7 +14,7 @@ I've been writing software professionally for over a decade, mostly in higher-le
 
 ## The Constitution
 
-Every agent in Claudius is defined by a JSON constitution:
+Every agent in Index is defined by a JSON constitution:
 
 ```json
 {
@@ -57,7 +57,7 @@ Example Domain is a reserved domain maintained by IANA for illustrative purposes
 
 The agent doesn't know it's invoking tools in the traditional sense. The orchestrator does the parsing, the execution, and the re-injection. This is simpler than the Claude API's native tool-use mechanism, and for my purposes, it works well. The agent learns to use the commands naturally because the constitution tells it to.
 
-Memory works the same way. An agent can write `/mem write <text>` to persist a note to disk, or `/mem read` to load its memory back into context. Memory is stored per-agent as a markdown file in `~/.claudius/memory/`. It's not sophisticated—append-only with timestamps—but it gives agents continuity across sessions without requiring a database.
+Memory works the same way. An agent can write `/mem write <text>` to persist a note to disk, or `/mem read` to load its memory back into context. Memory is stored per-agent as a markdown file in `~/.index/memory/`. It's not sophisticated—append-only with timestamps—but it gives agents continuity across sessions without requiring a database.
 
 ## The Ralph Loop
 
@@ -66,14 +66,14 @@ Memory works the same way. An agent can write `/mem write <text>` to persist a n
 The `/loop` command spawns an agent in a separate thread with an initial prompt, then continues sending "Continue." on each iteration while the agent works. The loop auto-stops after two consecutive idle turns (no tool calls) or twenty total iterations.
 
 ```
-[claudius] > /loop researcher Research the latest Rust release notes.
+[index] > /loop researcher Research the latest Rust release notes.
 Loop started: loop-0 (agent: researcher)
 
-[claudius] > /loops
+[index] > /loops
   loop-0  agent:researcher  state:running  iter:3  elapsed:8s
 	last: Rust 1.78 introduces...
 
-[claudius] > /log loop-0
+[index] > /log loop-0
 [loop-0/researcher #1]
 Rust 1.78 introduces...
 ```
@@ -82,12 +82,12 @@ You can suspend, resume, inject new prompts into a running loop, and tail its ou
 
 ## Token Awareness
 
-Claudius tracks token usage globally and per-agent. Every response prints its input and output token counts. The system prompt uses structured cache control blocks so that repeated messages to the same agent benefit from prompt caching—cached tokens cost a tenth of uncached ones. The agent trims its own conversation history at twelve messages and tombstones large tool-result blocks after processing, replacing multi-kilobyte fetch payloads with a stub. All of this is in service of the same principle: tokens are money, and the system should be aware of that at every level.
+Index tracks token usage globally and per-agent. Every response prints its input and output token counts. The system prompt uses structured cache control blocks so that repeated messages to the same agent benefit from prompt caching—cached tokens cost a tenth of uncached ones. The agent trims its own conversation history at twelve messages and tombstones large tool-result blocks after processing, replacing multi-kilobyte fetch payloads with a stub. All of this is in service of the same principle: tokens are money, and the system should be aware of that at every level.
 
 ## What's Next
 
-Claudius is still rough in places. The HTTP parser doesn't yet handle redirects. The streaming SSE parser can split across chunk boundaries. `main.cpp` is 1,100 lines and should be refactored. But it works, and I am looking forward to extending it further and integrating it deeper into my daily workflow.
+Index is still rough in places. The HTTP parser doesn't yet handle redirects. The streaming SSE parser can split across chunk boundaries. `main.cpp` is 1,100 lines and should be refactored. But it works, and I am looking forward to extending it further and integrating it deeper into my daily workflow.
 
-The project is [open-source on GitHub](https://github.com/tylerreckart/claudius).
+The project is [open-source on GitHub](https://github.com/tylerreckart/index).
 
-It installs via Homebrew (`brew tap tylerreckart/tap && brew install claudius`) or builds from source on macOS and Linux.
+It installs via Homebrew (`brew tap tylerreckart/tap && brew install index`) or builds from source on macOS and Linux.
