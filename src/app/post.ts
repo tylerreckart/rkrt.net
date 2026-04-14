@@ -35,7 +35,7 @@ export function generateNextPost(post: Markdown): PostType | null {
     path,
     body: body
       .split("<p>")
-      .slice(0, 3)
+      .slice(0, 2)
       .filter((str) => !str.includes("<img"))
       .join("<p>"),
   };
