@@ -7,8 +7,9 @@ pre {
   text-align: left;
   overflow: hidden;
   padding: 0;
-  margin: 32px 0;
-  border-radius: 8px;
+  margin: 40px 0;
+  border-radius: 24px;
+  corner-shape: squircle;
   background: var(--code-bg);
 }
 
@@ -23,7 +24,6 @@ pre>code {
   padding: 24px;
   border-radius: 8px;
   font-weight: 400;
-  letter-spacing: 0.01em;
   tab-size: 2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,14 +53,13 @@ pre>code::-webkit-scrollbar-thumb:hover {
    ======================================== */
 
 code {
-  color: #5c5d5e;
-  background-color: #f5f5f7;
+  color: var(--gray);
+  background-color: var(--dark-grey);
   padding: 3px 6px;
   border-radius: 4px;
   font-weight: 500;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-size: 14px;
-  letter-spacing: 0.01em;
 }
 
 a>code {
@@ -80,7 +79,7 @@ a:hover>code {
 
 .code-block-wrapper {
   position: relative;
-  margin: 32px 0;
+  margin: 40px 0;
 }
 
 .code-copy-button {
@@ -88,15 +87,12 @@ a:hover>code {
   top: 12px;
   right: 12px;
   padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--code-bg-secondary);
+  border: 1px solid var(--dark-grey);
   color: var(--code-text);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
+  border-radius: 12px;
+  corner-shape: squircle;
   font-size: 12px;
-  font-weight: 600;
-  font-family: 'Obviously', system-ui, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   cursor: pointer;
   z-index: 10;
   backdrop-filter: blur(8px);
@@ -104,10 +100,9 @@ a:hover>code {
 }
 
 .code-copy-button:hover {
-  background: rgba(75, 97, 206, 0.8);
+  background: var(--purple);
   border-color: var(--purple);
   color: var(--white);
-  transform: translateY(-1px);
 }
 
 .code-copy-button:active {
@@ -138,7 +133,7 @@ pre .hljs-literal,
 pre .hljs-section,
 pre .hljs-link {
   color: var(--code-keyword);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* Functions */
@@ -187,7 +182,7 @@ pre .hljs-variable.constant_ {
 pre .hljs-tag,
 pre .hljs-name {
   color: var(--code-tag);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* Attributes */
@@ -248,7 +243,7 @@ pre .hljs-params {
 pre .language-bash .hljs-meta,
 pre .language-sh .hljs-meta {
   color: var(--code-comment);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* Markdown */
