@@ -22,19 +22,6 @@ nav#site--nav {
   justify-content: space-between;
 }
 
-.logo {
-  width: var(--logo-width);
-  height: auto;
-}
-
-.logo-bg {
-  fill: var(--black);
-}
-
-.logo-fg {
-  fill: var(--white);
-}
-
 nav a {
   color: var(--white);
 }

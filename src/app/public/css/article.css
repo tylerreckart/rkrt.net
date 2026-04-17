@@ -296,7 +296,7 @@ article a {
 }
 
 .albums-icon-ring {
-  fill: var(--dark-blue);
+  fill: var(--purple);
 }
 
 .albums-icon-fg {
@@ -314,28 +314,7 @@ article a {
 }
 
 .happypath-icon-star {
-  fill: var(--yellow);
-}
-
-/* Factor Icon */
-.factor-icon {
-  width: 70%;
-}
-
-.factor-icon-bg {
-  fill: var(--bg);
-}
-
-.factor-icon-fg {
-  fill: var(--white);
-}
-
-.factor-icon-ring {
-  fill: var(--bg);
-}
-
-.factor-icon-ring-2 {
-  fill: var(--gray);
+  fill: var(--purple);
 }
 
 /* Hyperzsh Icon */
@@ -348,62 +327,7 @@ article a {
 }
 
 .hyperzsh-icon-bracket {
-  fill: var(--green);
-}
-
-/* Solar Icon */
-.solar-icon {
-  width: 70%;
-}
-
-.solar-icon-sun {
-  fill: var(--gray);
-}
-
-.solar-icon-fg {
   fill: var(--white);
-}
-
-/* Spindown Icon */
-.spindown-icon {
-  width: 70%;
-}
-
-.spindown-icon-bg {
-  fill: var(--bg);
-}
-
-.spindown-icon-fg {
-  fill: var(--white);
-}
-
-.spindown-icon-face {
-  fill: var(--bg);
-}
-
-/* Container Color Overrides */
-.project-image:has(.albums-icon) {
-  background-color: var(--blue);
-}
-
-.project-image:has(.happypath-icon) {
-  background-color: var(--orange);
-}
-
-.project-image:has(.hyperzsh-icon) {
-  background-color: var(--dark-grey);
-}
-
-.project-image:has(.factor-icon) {
-  background-color: var(--black);
-}
-
-.project-image:has(.solar-icon) {
-  background-color: var(--black);
-}
-
-.project-image:has(.spindown-icon) {
-  background-color: var(--gray);
 }
 
 .project-content {

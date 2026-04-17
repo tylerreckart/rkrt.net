@@ -31,8 +31,6 @@
   --code-attribute: #e06c75;
   --code-punctuation: #abb2bf;
 
-  --logo-width: 64px;
-
   /* Legacy support */
   --theme-ui-colors-pre-text: var(--code-text);
   --theme-ui-colors-pre-bg: var(--code-bg);

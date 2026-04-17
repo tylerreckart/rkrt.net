@@ -13,6 +13,6 @@ export default {
     twitter: "@tylerreckart",
   },
   integrations: {
-    gaTrackingId: "UA-70418516-2",
+    gaTrackingId: "G-8KBJH77N2Q",
   },
 };
