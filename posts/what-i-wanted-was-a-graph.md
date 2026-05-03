@@ -62,4 +62,4 @@ I'm not claiming that vector search is wrong. I'm claiming that when the questio
 
 R@K results are the confirmation, not the argument. My argument is that an agent's memory should be shaped like the questions it's going to ask, and the questions agents ask are mostly about identity, time, and structure. Those have always been graph problems.
 
-The project is [open-source on GitHub](https://github.com/arbiterintelligence/arbiter). The bench harness is at `bench/longmemeval/`—run it yourself.
+The project is [open-source on GitHub](https://github.com/arbitercorp/arbiter). The bench harness is at `bench/longmemeval/`—run it yourself.
