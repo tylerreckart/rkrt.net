@@ -97,6 +97,76 @@ article a {
   corner-shape: squircle;
 }
 
+.article--content table,
+.page--content table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.article--content table th,
+.article--content table td,
+.page--content table th,
+.page--content table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--gray), transparent 80%);
+}
+
+.article--content table th,
+.page--content table th {
+  font-weight: 800;
+  color: var(--white);
+  border-bottom: 2px solid color-mix(in srgb, var(--gray), transparent 60%);
+}
+
+.article--content table th[align="right"],
+.article--content table td[align="right"],
+.page--content table th[align="right"],
+.page--content table td[align="right"] {
+  text-align: right;
+}
+
+.article--content table th[align="center"],
+.article--content table td[align="center"],
+.page--content table th[align="center"],
+.page--content table td[align="center"] {
+  text-align: center;
+}
+
+.article--content table tr:last-child td,
+.page--content table tr:last-child td {
+  border-bottom: none;
+}
+
+.article--content .table-wrap,
+.page--content .table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.article--content .table-wrap table,
+.page--content .table-wrap table {
+  margin: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .article--content table,
+  .page--content table {
+    font-size: 14px;
+  }
+
+  .article--content table th,
+  .article--content table td,
+  .page--content table th,
+  .page--content table td {
+    padding: 8px 10px;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .article--content>p>img {
     margin: 0;

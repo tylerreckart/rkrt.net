@@ -12,8 +12,8 @@ A selection of things I've built. Some are products, some are tools, some are ex
 </div>
 <div class="project-content">
 
-### [Index](https://github.com/tylerreckart/index)
-Index is a lean, terminal-native multi-agent system built around token efficiency: match the model to the task, pair cheap executors with smarter advisors, and improve output reasoning.
+### [Arbiter](https://github.com/arbitercorp/arbiter)
+Arbiter is a lean, terminal-native multi-agent system and complete HTTP API built around token efficiency and memory optimization: match the model to the task, pair cheap executors with smarter advisors, and improve output reasoning.
 
 </div>
 </div>
