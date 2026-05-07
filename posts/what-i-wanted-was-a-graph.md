@@ -7,7 +7,7 @@ published: true
 
 In the few years I've been working with AI systems, the consistent frustration has been memory. Agents can find chunks that are *related* to a query but rarely the chunks that *answer* it. Each turn looks competent in isolation, but the system as a whole has no memory in the only sense that matters: the ability to act consistently with what it already knows.
 
-What I've come to understand in building [Arbiter](https://github.com/arbitercorp/arbiter) is that *similarity* and *recall* are fundamentally different operations. When an agent asks "what from our last research session on archaic human gene flow contradicts my current findings," it's not looking for things semantically near the word "archaic." It's looking for the specific findings, in the specific conversation, recorded at a specific time. For all their benefits, embeddings just get you to the neighborhood. The neighborhood is not the address.
+What I've come to understand in building [Arbiter](https://github.com/tylerreckart/arbiter) is that *similarity* and *recall* are fundamentally different operations. When an agent asks "what from our last research session on archaic human gene flow contradicts my current findings," it's not looking for things semantically near the word "archaic." It's looking for the specific findings, in the specific conversation, recorded at a specific time. For all their benefits, embeddings just get you to the neighborhood. The neighborhood is not the address.
 
 I wanted to walk from a project node to the references that informed it, and from those references to the conclusions derived from them. I wanted to know which facts were still true, which had been retired, and what the agent believed at any specific point in time. I wanted to ask "what's already covered in this area" and get an answer that depended on graph density, not vector neighborhood density.
 
@@ -62,4 +62,4 @@ I'm not claiming that vector search is wrong. I'm claiming that when the questio
 
 R@K results are the confirmation, not the argument. My argument is that an agent's memory should be shaped like the questions it's going to ask, and the questions agents ask are mostly about identity, time, and structure. Those have always been graph problems.
 
-The project is [open-source on GitHub](https://github.com/arbitercorp/arbiter). The bench harness is at `bench/longmemeval/`—run it yourself.
+The project is [open-source on GitHub](https://github.com/tylerreckart/arbiter). The bench harness is at `bench/longmemeval/`—run it yourself.

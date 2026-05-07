@@ -12,8 +12,8 @@ A selection of things I've built. Some are products, some are tools, some are ex
 </div>
 <div class="project-content">
 
-### [Arbiter](https://github.com/arbitercorp/arbiter)
-Arbiter is a lean, terminal-native multi-agent system and complete HTTP API built around token efficiency and memory optimization: match the model to the task, pair cheap executors with smarter advisors, and improve output reasoning.
+### [Arbiter](https://github.com/tylerreckaart/arbiter)
+Arbiter is a stream-native agent runtime with advisor gates, typed temporal memory, artifacts, multi-tenant HTTP/SSE API, TUI, and CLI.
 
 </div>
 </div>

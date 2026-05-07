@@ -88,4 +88,4 @@ Arbiter tracks token usage globally and per-agent. Every response prints its inp
 
 Arbiter is still rough in places. The HTTP parser doesn't yet handle redirects. The streaming SSE parser can split across chunk boundaries. `main.cpp` is 1,100 lines and should be refactored. But it works, and I am looking forward to extending it further and integrating it deeper into my daily workflow.
 
-The project is [open-source on GitHub](https://github.com/arbitercorp/arbiter).
+The project is [open-source on GitHub](https://github.com/tylerreckart/arbiter).
