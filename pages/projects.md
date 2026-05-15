@@ -12,7 +12,7 @@ A selection of things I've built. Some are products, some are tools, some are ex
 </div>
 <div class="project-content">
 
-### [Arbiter](https://github.com/tylerreckaart/arbiter)
+### [Arbiter](https://github.com/tylerreckart/arbiter)
 Arbiter is a stream-native agent runtime with advisor gates, typed temporal memory, artifacts, multi-tenant HTTP/SSE API, TUI, and CLI.
 
 </div>
