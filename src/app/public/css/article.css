@@ -1,13 +1,13 @@
 article {
   display: flex;
   flex-direction: column;
-  max-width: 720px;
+  max-width: 540px;
   font-size: 16px;
   line-height: 32px;
 }
 
 .article-page--wrapper {
-  max-width: 720px;
+  max-width: 540px;
 }
 
 article p {
@@ -83,7 +83,7 @@ article a {
 }
 
 .article--content>p {
-  max-width: 720px;
+  max-width: 540px;
 }
 
 .article--content>p:last-of-type {
@@ -220,7 +220,7 @@ article a {
 }
 
 .next-post--content {
-  max-width: 720px;
+  max-width: 540px;
   margin-bottom: 0;
   color: var(--white);
 }
@@ -360,12 +360,18 @@ article a {
   corner-shape: squircle;
 }
 
-/* Albums Icon */
-.albums-icon {
-  width: 50%;
+/* Arbiter Icon */
+.arbiter-icon {
+  width: 40%;
+  fill: var(--white);
 }
 
-.albums-icon-ring {
+/* Albums Icon */
+.albums-icon {
+  width: 40%;
+}
+
+.albums-icon-accent {
   fill: var(--purple);
 }
 
