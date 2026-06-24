@@ -65,12 +65,8 @@
 /* ========================================
    Latest Post
    ======================================== */
-
 .latest--post {
-  margin: 40px 0;
-  border-top: 2px solid color-mix(in srgb, var(--gray), transparent 80%);
-  border-bottom: 2px solid color-mix(in srgb, var(--gray), transparent 80%);
-  padding: 40px 0;
+  margin-bottom: 40px;
 }
 
 .latest--post .article--header {
