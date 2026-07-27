@@ -15,10 +15,6 @@ article p {
   padding: 0;
 }
 
-article a {
-  font-weight: 800;
-}
-
 .article--header,
 .page--header {
   display: flex;
@@ -37,11 +33,11 @@ article a {
 .page--header h2,
 .next-post--header h1,
 .next-post--header h2 {
+  font-family: var(--font-mono);
   font-size: 24px;
   line-height: 24px;
   margin-bottom: 10px;
-  font-weight: 800;
-  color: var(--white);
+  font-weight: 700;
   margin-top: 0;
 }
 
@@ -51,8 +47,9 @@ article a {
 }
 
 .article--header h2 {
-  font-size: 56px;
-  line-height: 64px;
+  color: var(--text);
+  font-size: 32px;
+  line-height: 44px;
   text-align: left;
 }
 
@@ -63,7 +60,7 @@ article a {
 .article--header span {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--gray);
   margin-top: 5px;
 }
@@ -118,8 +115,8 @@ article a {
 
 .article--content table th,
 .page--content table th {
-  font-weight: 800;
-  color: var(--white);
+  font-weight: 500;
+  color: var(--text);
   border-bottom: 2px solid color-mix(in srgb, var(--gray), transparent 60%);
 }
 
@@ -214,7 +211,7 @@ article a {
   justify-content: center;
   align-items: flex-end;
   position: relative;
-  background: var(--code-bg);
+  background: var(--surface);
   width: 100%;
   padding: 40px 0 0 0;
 }
@@ -222,7 +219,7 @@ article a {
 .next-post--content {
   max-width: 540px;
   margin-bottom: 0;
-  color: var(--white);
+  color: var(--text);
 }
 
 .continue--reading {
@@ -237,12 +234,12 @@ article a {
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 16px;
-  color: var(--white);
+  color: var(--orange);
   text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-offset: 2px;
-  text-decoration-color: var( --purple);
-  font-weight: 800;
+  text-decoration-style: dotted;
+  text-decoration-color: var( --orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   align-self: flex-end;
 }
 
@@ -257,7 +254,7 @@ article a {
 .next-post--header h2 {
   font-size: 32px;
   line-height: 40px;
-  color: inherit;
+  color: var(--text);
   text-align: left;
 }
 
@@ -269,7 +266,7 @@ article a {
 .next-post--header span {
   font-size: 15px;
   line-height: 24px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--gray);
   margin-top: 2px;
 }
@@ -293,7 +290,7 @@ article a {
 .page--content h2 {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 800;
+  font-weight: 500;
   margin: 48px 0 24px 0;
 }
 
@@ -302,26 +299,36 @@ article a {
 }
 
 .page--content h2 a:hover {
-  border-bottom-color: var(--purple);
+  border-bottom-color: var(--orange);
 }
 
 .page--content h3 {
   font-size: 20px;
   line-height: 28px;
-  font-weight: 800;
+  font-weight: 500;
   margin: 40px 0 15px 0;
 }
 
 .page--content h3 a {
-  color: inherit;
+  color: var( --orange);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var( --orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .page--content h3 a:hover {
-  border-bottom-color: var(--purple);
+  border-bottom-color: var(--orange);
 }
 
 .page--content>a {
-  color: var( --purple);
+  color: var( --text);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var( --orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .page--content>p {
@@ -355,7 +362,7 @@ article a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--gray);
+  background-color: var(--tile);
   border-radius: 18px;
   corner-shape: squircle;
 }
@@ -372,7 +379,7 @@ article a {
 }
 
 .albums-icon-accent {
-  fill: var(--purple);
+  fill: var(--orange);
 }
 
 .albums-icon-fg {
@@ -390,7 +397,7 @@ article a {
 }
 
 .happypath-icon-star {
-  fill: var(--purple);
+  fill: var(--orange);
 }
 
 /* Hyperzsh Icon */
@@ -399,7 +406,7 @@ article a {
 }
 
 .hyperzsh-icon-bg {
-  fill: var(--bg);
+  fill: var(--white);
 }
 
 .hyperzsh-icon-bracket {

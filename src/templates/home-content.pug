@@ -1,5 +1,13 @@
 main.content
   section.home--about-section
+    div.home--arbiter-ad
+      div.home--arbiter-ad-frame
+        img(src="/images/arbiter-og.jpg", alt="Arbiter — The agent runtime that lives on your machine.", width="1280", height="640")
+        a.home--arbiter-ad-cta(href="https://arbiter.run", target="_blank", rel="noopener noreferrer") Install Arbiter
+    div.home--separator(role="separator", aria-label="Latest from the blog")
+      span.home--separator-line
+      span.home--separator-label Latest
+      span.home--separator-line
     article.latest--post
       div.article--header
         a(href="/posts/" + path) #[h2=attributes.title]

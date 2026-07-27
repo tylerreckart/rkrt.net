@@ -1,21 +1,26 @@
 :root {
-  --black: #000000;
+  color-scheme: light;
+
+  --black: #111318;
   --white: #ffffff;
-  --bg: #0e0f12;
-  --orange: #e35e34;
-  --purple: #4b61ce;
-  --gray: #a2b4bd;
-  --pink: #ff375f;
-  --red: #ff453a;
-  --green: #31d158;
-  --yellow: #fed709;
+  --text: #1a1c1f;
+  --bg: #fafaf9;
+  --surface: #f0f0ee;
+  --orange: #ee5f00;
+  --purple: #3d52b8;
+  --gray: #5f6b73;
+  --pink: #e11d48;
+  --red: #dc2626;
+  --green: #16a34a;
+  --yellow: #ca8a04;
   --blue: #004DFF;
   --dark-blue: #00216e;
-  --aqua: #64d1ff;
-  --dark-grey: #292d32;
-  --code-bg: #191c1f;
+  --aqua: #0891b2;
+  --dark-grey: #e8e9eb;
+  --tile: #1a1c1f;
+  --font-mono: 'Space Mono', 'SF Mono', Monaco, Consolas, monospace;
 
-  /* Modern Code Theme */
+  /* Modern Code Theme (kept dark for contrast) */
   --code-bg: #1a1d23;
   --code-bg-secondary: #22252b;
   --code-text: #e4e6eb;
@@ -27,7 +32,7 @@
   --code-class: #e5c07b;
   --code-constant: #56b6c2;
   --code-operator: #abb2bf;
-  --code-tag: var(--purple);
+  --code-tag: var(--orange);
   --code-attribute: #e06c75;
   --code-punctuation: #abb2bf;
 
@@ -93,15 +98,14 @@ body.fixed::after {
 }
 
 a {
-  sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  text-decoration: none;
+  color: var( --orange);
   text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
-  text-align: center;
-  color: var(--white);
-  text-decoration-color: var( --purple);
+  text-decoration-style: dotted;
+  text-decoration-color: var( --orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 h1,
@@ -110,7 +114,6 @@ h3,
 h4,
 h5,
 h6 {
-  sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -134,7 +137,7 @@ blockquote {
   flex-direction: column;
   max-width: 540px;
   width: 100%;
-  color: var(--white);
+  color: var(--text);
 }
 
 .page--inner {

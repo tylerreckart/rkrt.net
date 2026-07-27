@@ -14,23 +14,27 @@
 }
 
 .list--item h2 {
+  font-family: var(--font-mono);
   line-height: 28px;
   font-weight: 700;
   margin: 0;
   text-align: left;
-  color: var(--white);
+  color: var(--text);
   font-size: 16px;
   
 }
 
 .list--item a {
   flex: 1;
-  text-decoration: none;
-  color: var(--gray);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var( --orange);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .list--item:hover h2 {
-  color: var( --purple);
+  color: var( --orange);
 }
 
 .list--item>time {
@@ -40,7 +44,7 @@
   white-space: nowrap;
   font-size: 16px;
   line-height: 28px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--gray);
 }
 

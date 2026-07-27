@@ -1,6 +1,6 @@
 meta(charset="utf-8")
 meta(name="viewport", content="initial-scale=1.0, width=device-width")
-meta(name="theme-color", content="var(--black)")
+meta(name="theme-color", content="#fafaf9")
 if seo.title
   meta(property="og:site_name", content=seo.title)
 if seo.author
@@ -11,7 +11,7 @@ link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/
 link(rel="stylesheet", type="text/css", href="/css/styles.css")
 link(rel="preconnect", href="https://fonts.googleapis.com", crossorigin=true)
 link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=true)
-link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,700&display=swap")
+link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;0,500;1,300;1,400;1,700&display=swap")
 link(rel="stylesheet", href="https://use.typekit.net/uay2stt.css")
 script(type="text/javascript" crossorigin="anonymous", src="https://kit.fontawesome.com/881830ea41.js")
 script(type="text/javascript" src="/js/bundle.js" async)
@@ -25,7 +25,8 @@ if integrations.gaTrackingId
 
 script.
   (function() {
-    var colorVars = ['black', 'white', 'bg', 'purple', 'gray', 'orange', 'pink', 'red', 'green', 'yellow', 'blue', 'aqua'];
+    var colorVars = ['black', 'white', 'text', 'bg', 'surface', 'tile', 'purple', 'gray', 'orange', 'pink', 'red', 'green', 'yellow', 'blue', 'aqua'];
+    var storagePrefix = 'theme-light-v2-';
     function randomHSL(minS, maxS, minL, maxL) {
       var h = Math.floor(Math.random() * 360);
       var s = minS + Math.floor(Math.random() * (maxS - minS));
@@ -35,38 +36,45 @@ script.
     function randomizeTheme() {
       var root = document.documentElement;
       var baseHue = Math.floor(Math.random() * 360);
-      var newBlack = 'hsl(' + baseHue + ', ' + (30 + Math.floor(Math.random() * 40)) + '%, ' + (5 + Math.floor(Math.random() * 12)) + '%)';
-      var newWhite = 'hsl(' + ((baseHue + 180) % 360) + ', ' + (10 + Math.floor(Math.random() * 30)) + '%, ' + (92 + Math.floor(Math.random() * 6)) + '%)';
-      var newBg = 'hsl(' + ((baseHue + 90) % 360) + ', ' + (20 + Math.floor(Math.random() * 50)) + '%, ' + (50 + Math.floor(Math.random() * 25)) + '%)';
-      var newPurple = randomHSL(70, 100, 40, 65);
-      var newGray = randomHSL(20, 60, 50, 80);
-      var newOrange = randomHSL(70, 100, 45, 65);
-      var newPink = randomHSL(80, 100, 45, 70);
-      var newRed = randomHSL(80, 100, 45, 60);
-      var newGreen = randomHSL(70, 100, 35, 55);
-      var newYellow = randomHSL(90, 100, 50, 65);
-      var newBlue = randomHSL(80, 100, 40, 60);
-      var newAqua = randomHSL(70, 100, 50, 75);
+      var newBlack = 'hsl(' + baseHue + ', ' + (12 + Math.floor(Math.random() * 20)) + '%, ' + (8 + Math.floor(Math.random() * 8)) + '%)';
+      var newWhite = '#ffffff';
+      var newText = 'hsl(' + ((baseHue + 180) % 360) + ', ' + (8 + Math.floor(Math.random() * 14)) + '%, ' + (12 + Math.floor(Math.random() * 10)) + '%)';
+      var newBg = 'hsl(' + ((baseHue + 40) % 360) + ', ' + (4 + Math.floor(Math.random() * 10)) + '%, ' + (96 + Math.floor(Math.random() * 3)) + '%)';
+      var newSurface = 'hsl(' + ((baseHue + 40) % 360) + ', ' + (4 + Math.floor(Math.random() * 10)) + '%, ' + (92 + Math.floor(Math.random() * 3)) + '%)';
+      var newTile = newBlack;
+      var newPurple = randomHSL(55, 85, 38, 55);
+      var newGray = randomHSL(6, 18, 38, 52);
+      var newOrange = randomHSL(70, 100, 40, 55);
+      var newPink = randomHSL(70, 95, 40, 55);
+      var newRed = randomHSL(70, 95, 40, 52);
+      var newGreen = randomHSL(55, 85, 32, 48);
+      var newYellow = randomHSL(80, 100, 38, 52);
+      var newBlue = randomHSL(70, 95, 40, 55);
+      var newAqua = randomHSL(60, 90, 38, 55);
       root.style.setProperty('--black', newBlack);
       root.style.setProperty('--white', newWhite);
+      root.style.setProperty('--text', newText);
       root.style.setProperty('--bg', newBg);
-      root.style.setProperty('--purple', newPurple);
+      root.style.setProperty('--surface', newSurface);
+      root.style.setProperty('--tile', newTile);
+      root.style.setProperty('--orange', newPurple);
       root.style.setProperty('--gray', newGray);
       root.style.setProperty('--orange', newOrange);
       root.style.setProperty('--pink', newPink);
       root.style.setProperty('--red', newRed);
       root.style.setProperty('--green', newGreen);
       root.style.setProperty('--yellow', newYellow);
-      root.style.setProperty(' --purple', newBlue);
+      root.style.setProperty('--blue', newBlue);
+      root.style.setProperty(' --orange', newBlue);
       root.style.setProperty('--aqua', newAqua);
       colorVars.forEach(function(c) {
-        localStorage.setItem('theme-' + c, root.style.getPropertyValue('--' + c));
+        localStorage.setItem(storagePrefix + c, root.style.getPropertyValue('--' + c));
       });
     }
     function restoreTheme() {
       var root = document.documentElement;
       colorVars.forEach(function(c) {
-        var val = localStorage.getItem('theme-' + c);
+        var val = localStorage.getItem(storagePrefix + c);
         if (val) {
           root.style.setProperty('--' + c, val);
         }
