@@ -1,13 +1,13 @@
 article {
   display: flex;
   flex-direction: column;
-  max-width: 540px;
+  max-width: 650px;
   font-size: 16px;
   line-height: 32px;
 }
 
 .article-page--wrapper {
-  max-width: 540px;
+  max-width: 650px;
 }
 
 article p {
@@ -33,11 +33,8 @@ article p {
 .page--header h2,
 .next-post--header h1,
 .next-post--header h2 {
-  font-family: var(--font-mono);
-  font-size: 24px;
-  line-height: 24px;
-  margin-bottom: 10px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   margin-top: 0;
 }
 
@@ -47,9 +44,9 @@ article p {
 }
 
 .article--header h2 {
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text);
-  font-size: 32px;
-  line-height: 44px;
   text-align: left;
 }
 
@@ -60,7 +57,7 @@ article p {
 .article--header span {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--gray);
   margin-top: 5px;
 }
@@ -68,19 +65,20 @@ article p {
 .article--content>h2 {
   margin-bottom: 10px;
   margin-top: 30px;
-  font-size: 18pt;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .article--content>hr {
   border: none;
-  height: 2px;
+  height: 1px;
   background: color-mix(in srgb, var(--gray), transparent 80%);
   margin: 20px 0;
   opacity: 0.2;
 }
 
 .article--content>p {
-  max-width: 540px;
+  max-width: 650px;
 }
 
 .article--content>p:last-of-type {
@@ -90,7 +88,7 @@ article p {
 .article--content>p>img {
   margin: 0 -50px;
   width: calc(100% + 100px);
-  border-radius: 24px;
+  border-radius: 6px;
   corner-shape: squircle;
 }
 
@@ -171,8 +169,8 @@ article p {
   }
 
   .article--header h2 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   article {
@@ -217,7 +215,7 @@ article p {
 }
 
 .next-post--content {
-  max-width: 540px;
+  max-width: 650px;
   margin-bottom: 0;
   color: var(--text);
 }
@@ -234,10 +232,10 @@ article p {
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 16px;
-  color: var(--orange);
+  color: var(--black);
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
+  text-decoration-color: var(--black);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   align-self: flex-end;
@@ -252,8 +250,8 @@ article p {
 }
 
 .next-post--header h2 {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text);
   text-align: left;
 }
@@ -266,7 +264,7 @@ article p {
 .next-post--header span {
   font-size: 15px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300 !important;
   color: var(--gray);
   margin-top: 2px;
 }
@@ -288,9 +286,8 @@ article p {
 }
 
 .page--content h2 {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   margin: 48px 0 24px 0;
 }
 
@@ -299,34 +296,33 @@ article p {
 }
 
 .page--content h2 a:hover {
-  border-bottom-color: var(--orange);
+  border-bottom-color: var(--black);
 }
 
 .page--content h3 {
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   margin: 40px 0 15px 0;
 }
 
 .page--content h3 a {
-  color: var( --orange);
+  color: var(--black);
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
+  text-decoration-color: var(--black);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
 .page--content h3 a:hover {
-  border-bottom-color: var(--orange);
+  border-bottom-color: var(--black);
 }
 
 .page--content>a {
   color: var( --text);
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
+  text-decoration-color: var(--black);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
@@ -338,95 +334,44 @@ article p {
 
 .page--content>hr {
   border: none;
-  height: 2px;
+  height: 1px;
   background: color-mix(in srgb, var(--gray), transparent 80%);
   margin: 40px 0;
 }
 
 /* ---------- Project Entry Layout ---------- */
-.project-entry {
+.tych {
   display: flex;
-  gap: 40px;
-  margin: 40px 0;
-  align-items: flex-start;
+  gap: 10px;
 }
 
-.project-entry:first-of-type {
-  margin-top: 0;
-}
-
-.project-image {
-  flex-shrink: 0;
-  width: 200px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--tile);
-  border-radius: 18px;
-  corner-shape: squircle;
-}
-
-/* Arbiter Icon */
-.arbiter-icon {
-  width: 40%;
-  fill: var(--white);
-}
-
-/* Albums Icon */
-.albums-icon {
-  width: 40%;
-}
-
-.albums-icon-accent {
-  fill: var(--orange);
-}
-
-.albums-icon-fg {
-  fill: var(--white);
-}
-
-/* HappyPath Icon */
-.happypath-icon {
-  width: 80%;
-  height: auto;
-}
-
-.happypath-icon-bg {
-  fill: var(--white);
-}
-
-.happypath-icon-star {
-  fill: var(--orange);
-}
-
-/* Hyperzsh Icon */
-.hyperzsh-icon {
-  width: 50%;
-}
-
-.hyperzsh-icon-bg {
-  fill: var(--white);
-}
-
-.hyperzsh-icon-bracket {
-  fill: var(--white);
-}
-
-.project-content {
+.tych > div {
   flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.project-content h2,
-.project-content h3 {
+.tych h3,
+.tych p {
+  padding: 0;
   margin: 0;
-  margin-bottom: 8px;
-  line-height: 24px;
 }
 
-.project-content>p:last-child {
-  margin-bottom: 0;
+.project-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-hero img {
+  margin-bottom: 10px;
+}
+
+.project-hero h3,
+.project-hero p {
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -434,13 +379,13 @@ article p {
   .article--header h2,
   .page--header h1,
   .page--header h2 {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .article--header h2 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .article--header span {
@@ -456,13 +401,14 @@ article p {
   }
 
   .page--content h2 {
-    line-height: 24px;
+    font-size: 16px;
+    font-weight: 600;
     margin: 24px 0 12px 0;
   }
 
   .page--content h3 {
     font-size: 16px;
-    line-height: 22px;
+    font-weight: 600;
     margin: 20px 0 8px 0;
   }
 

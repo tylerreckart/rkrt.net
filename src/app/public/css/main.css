@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
 
-  --black: #111318;
+  --black: #142B81;
   --white: #ffffff;
   --text: #1a1c1f;
   --bg: #fafaf9;
-  --surface: #f0f0ee;
+  --surface: #e9ecf3;
   --orange: #ee5f00;
   --purple: #3d52b8;
   --gray: #5f6b73;
@@ -32,7 +32,7 @@
   --code-class: #e5c07b;
   --code-constant: #56b6c2;
   --code-operator: #abb2bf;
-  --code-tag: var(--orange);
+  --code-tag: var(--black);
   --code-attribute: #e06c75;
   --code-punctuation: #abb2bf;
 
@@ -72,7 +72,7 @@ body {
   font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   min-height: 100vh;
   font-size: 16px;
-  background: var(--bg);
+  background: linear-gradient(to bottom, #F5F4FF, #FFF);
 }
 
 #page {
@@ -100,10 +100,10 @@ body.fixed::after {
 a {
   font-size: 16px;
   text-decoration: none;
-  color: var( --orange);
+  color: var(--black);
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
+  text-decoration-color: var(--black);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
@@ -116,6 +116,8 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 blockquote {
@@ -135,19 +137,20 @@ blockquote {
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 540px;
+  max-width: 650px;
   width: 100%;
   color: var(--text);
 }
 
 .page--inner {
-  max-width: 540px;
+  max-width: 650px;
   width: 100%;
   margin-bottom: 40px;
 }
 
 .page--inner h1 {
-  font-size: 32px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 960px) {
@@ -155,20 +158,8 @@ blockquote {
     line-height: 1.6em;
   }
 
-  a {
-    font-size: 14px;
-  }
-
   .content {
     margin-top: 0;
     padding: 0 20px;
-  }
-
-  #page {
-    padding-top: 108px;
-  }
-
-  .page--inner h1 {
-    font-size: 24px;
   }
 }

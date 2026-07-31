@@ -50,7 +50,7 @@ export default function buildHome(
     preview: createPreview(posts[0].body)
   };
 
-  const homepage = renderHomepage({ ...latestPost, ...config, nextPost: generateNextPost(posts[1]) });
+  const homepage = renderHomepage({ ...latestPost, ...config, posts, nextPost: generateNextPost(posts[1]) });
 
   fs.writeFile(`${outdir}/index.html`, homepage, (error: any): void => {
     if (error) {

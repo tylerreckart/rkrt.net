@@ -11,7 +11,7 @@ The concept was for a nutrition tracker where you describe a meal the way you'd 
 
 It's a SwiftUI app backed by SwiftData and HealthKit, with three AI features behind it: parsing a meal into macros, reading patterns in a food log, and coaching against a weight goal. The behavior that makes Newton feel smart lives in three JSON files, and the only model-facing code required is the app's parser that interprets the model results. Everything else is the kind of plumbing you'd write for any HTTP API.
 
-<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;margin:24px 0;border-radius:16px;overflow:hidden;">
+<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;margin:24px 0;border-radius:6px;overflow:hidden;">
   <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/qzQ1Iawo9iQ?si=zUmSN7MG4LgXvvK-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 

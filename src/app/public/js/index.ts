@@ -54,7 +54,7 @@ function main(): void {
 
   const getClass = (): string => {
     if (path === '/') {
-      return 'blog';
+      return 'home';
     }
 
     if (path === 'posts') {

@@ -1,260 +1,30 @@
-/* ========================================
-   Homepage Sections
-   ======================================== */
-
-.home--about-section {
-  width: 100%;
-  max-width: 540px;
-}
-
-.home--latest-section {
-  width: 100%;
-  max-width: 540px;
-  margin: 0 auto 40px auto;
-}
-
-/* ========================================
-   Arbiter Ad
-   ======================================== */
-
-.home--arbiter-ad {
-  position: relative;
-  z-index: 0;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
-
-.home--arbiter-ad-frame {
-  position: relative;
-  z-index: 1;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  border-radius: 16px;
-  corner-shape: squircle;
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 12%, transparent),
-    0 2px 8px color-mix(in srgb, #111318 8%, transparent);
-}
-
-.home--arbiter-ad-frame::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  height: 42%;
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, #1a0e08 62%, transparent) 0%,
-    color-mix(in srgb, #1a0e08 28%, transparent) 40%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-.home--arbiter-ad img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.home--arbiter-ad-cta {
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(-50%);
-  padding: 8px 18px;
-  border: none;
-  border-radius: 24px;
-  corner-shape: squircle;
-  background: #fff;
-  color: var(--black) !important;
-  font-family: 'Work Sans', system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.2;
-  text-decoration: none !important;
-  text-underline-offset: unset;
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, #111318 12%, transparent),
-    0 2px 4px color-mix(in srgb, #111318 25%, transparent),
-    0 10px 24px color-mix(in srgb, #111318 35%, transparent);
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-.home--arbiter-ad-cta:hover {
-  background: var(--orange);
-  color: #fff !important;
-  text-decoration: none !important;
-  box-shadow:
-    0 2px 4px color-mix(in srgb, #111318 20%, transparent),
-    0 12px 28px color-mix(in srgb, var(--orange) 50%, transparent),
-    0 22px 40px color-mix(in srgb, #111318 32%, transparent);
-  transform: translateX(-50%) translateY(-4px) scale(1.06);
-}
-
-.home--arbiter-ad-cta:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home--arbiter-ad-cta {
-    transition: none;
-  }
-
-  .home--arbiter-ad-cta:hover {
-    transform: translateX(-50%);
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .home--arbiter-ad-cta {
-    bottom: 20px;
-    padding: 7px 16px;
-    font-size: 13px;
-  }
-}
-
-/* ========================================
-   Home Separator
-   ======================================== */
-
-.home--separator {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  margin: 48px 0 32px 0;
-}
-
-.home--separator-line {
-  flex: 1;
-  height: 1px;
-  background: color-mix(in srgb, var(--gray), transparent 70%);
-  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-}
-
-.home--separator-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--gray) 88%, var(--text));
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-/* ========================================
-   About Card - Bold & Stark
-   ======================================== */
-
-.about--card {
-  color: var(--text);
-  position: relative;
-}
-
-.about--title {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 500;
-  margin: 0 0 24px 0;
-  color: inherit;
-}
-
-.about--bio {
-  line-height: 36px;
-  margin: 0;
-  color: inherit;
-  font-weight: normal;
-}
-
-.about--bio>a {
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
-  color: inherit;
-  text-decoration-color: var( --orange);
-}
-
-/* ========================================
-   Section Headers
-   ======================================== */
-
 .section--header {
   margin-bottom: 40px;
   padding-bottom: 16px;
 }
 
 .section--title {
-  font-size: 48px;
-  line-height: 56px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   margin: 0;
 }
 
-/* ========================================
-   Latest Post
-   ======================================== */
-.latest--post {
-  margin-bottom: 40px;
+.section-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.latest--post .article--header {
-  display: flex;
-  flex-direction: column;
+.home--about-section > p {
+  padding: 0;
+  margin: 0;
+}
+
+section {
   margin-bottom: 20px;
-  margin-top: 0;
 }
 
-.latest--post .article--header h2 {
-  font-family: var(--font-mono);
-  font-size: 32px;
-  line-height: 44px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.latest--post .article--header a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-.latest--post .article--content {
-  line-height: 32px;
-}
-
-.latest--post .article--content p {
-  margin: 0 0 16px 0;
-}
-
-.latest--post .article--content a {
-  color: var( --orange);
-  font-weight: 400;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+.links {
+  display: flex;
+  gap: 10px;
 }

@@ -8,43 +8,35 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  padding: 8px 0;
-  border-top: 2px solid color-mix(in srgb, var(--gray), transparent 80%);
   width: 100%;
 }
 
 .list--item h2 {
-  font-family: var(--font-mono);
-  line-height: 28px;
-  font-weight: 700;
-  margin: 0;
   text-align: left;
-  color: var(--text);
+  color: var(--black);
+  font-weight: 400;
   font-size: 16px;
-  
 }
 
 .list--item a {
   flex: 1;
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var( --orange);
+  text-decoration-color: var(--black);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-.list--item:hover h2 {
-  color: var( --orange);
-}
-
 .list--item>time {
   display: block;
-  width: 120px;
+  margin-right: 10px;
   flex-shrink: 0;
   white-space: nowrap;
   font-size: 16px;
   line-height: 28px;
-  font-weight: 500;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
   color: var(--gray);
 }
 
@@ -57,15 +49,8 @@
   .list--item {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 0;
-    gap: 8px;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .list--item:hover {
-    padding: 20px 0;
-    margin: 0;
   }
 
   .list--item>time {
@@ -98,10 +83,10 @@
 
 @media screen and (max-width: 640px) {
   .list--item {
-    padding: 16px 0;
+    margin-bottom: 10px;
   }
-
-  .list--item:hover {
-    padding: 16px 0;
+  
+  .list--item h2 {
+    font-size: 15px;
   }
 }

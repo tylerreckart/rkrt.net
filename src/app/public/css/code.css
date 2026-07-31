@@ -8,7 +8,7 @@ pre {
   overflow: hidden;
   padding: 0;
   margin: 40px 0;
-  border-radius: 24px;
+  border-radius: 6px;
   corner-shape: squircle;
   background: var(--code-bg);
 }
@@ -64,7 +64,7 @@ code {
 
 a>code {
   text-decoration: none;
-  color: var(--orange);
+  color: var(--black);
   background-color: rgba(75, 97, 206, 0.08);
   border-color: rgba(75, 97, 206, 0.15);
 }
@@ -100,8 +100,8 @@ a:hover>code {
 }
 
 .code-copy-button:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--black);
+  border-color: var(--black);
   color: var(--white);
 }
 

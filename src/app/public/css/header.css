@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: center;
   z-index: 1;
-  max-width: 540px;
+  max-width: 650px;
   width: 100%;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -53,12 +53,12 @@ nav a {
   font-size: 14px;
   display: block;
   font-weight: normal;
-  border-radius: 24px;
+  border-radius: 12px;
   corner-shape: squircle;
 }
 
 .nav--link.active {
-  background: var( --black);
+  background: var(--black);
   color: #fff;
 }
 
@@ -72,29 +72,12 @@ nav a {
 
 .site--title>h1 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 960px) {
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    background: var(--bg);
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .site-title h1 {
-    padding-bottom: 0;
-  }
-
-  .site--title {
-    margin: 0;
-    flex: unset;
+    margin : 0;
   }
 
   nav#site--nav {

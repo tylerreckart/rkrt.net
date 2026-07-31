@@ -1,17 +1,21 @@
+-
+  function toISODate(date) {
+    return (new Date(Date.parse(date))).toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' });
+  }
+
 main.content
   section.home--about-section
-    div.home--arbiter-ad
-      div.home--arbiter-ad-frame
-        img(src="/images/arbiter-og.jpg", alt="Arbiter — The agent runtime that lives on your machine.", width="1280", height="640")
-        a.home--arbiter-ad-cta(href="https://arbiter.run", target="_blank", rel="noopener noreferrer") Install Arbiter
-    div.home--separator(role="separator", aria-label="Latest from the blog")
-      span.home--separator-line
-      span.home--separator-label Latest
-      span.home--separator-line
-    article.latest--post
-      div.article--header
-        a(href="/posts/" + path) #[h2=attributes.title]
-        span.post--meta #[+time(attributes.date)]
-      div.article--content
-        | !{preview}
-        a(href="/posts/" + path, class="continue--reading") Continue reading
+      span.section-label Intro
+      p Tyler Reckart is a #[a(href="/about") creative technologist] focused on bringing emerging trading capabilities to market at #[a(href="https://altruist.com/", target="_blank", rel="noopener,noreferrer") Altruist].
+  section.web
+    span.section-label On The Web
+    div.links
+      a(href="https://github.com/tylerreckart") Github
+      a(href="https://dribbble.com/rkrt") Dribbble
+      a(href="https://bsky.app/profile/rkrt.net") Bluesky
+  section.posts
+    span.section-label Writing
+    each post in posts
+      div.list--item
+        time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
+        a(href="/posts/" + post.path) #[h2=post.attributes.title]
