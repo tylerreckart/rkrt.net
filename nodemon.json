@@ -1,5 +1,17 @@
 {
-  "watch": ["src", "pages", "posts", "photos"],
-  "ext": "ts,js,json,css,pug,md",
+  "watch": [
+    "src",
+    "pages",
+    "posts",
+    "photos",
+    "data/goodreads_library_export.csv"
+  ],
+  "ext": "ts,js,json,css,pug,md,csv",
+  "ignore": [
+    "data/cover-cache.json",
+    "data/snippet-cache.json",
+    "images/covers/**",
+    "build/**"
+  ],
   "exec": "npx ts-node ./cli/build"
 }

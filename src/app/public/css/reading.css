@@ -1,0 +1,261 @@
+.reading--intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.reading--intro p {
+  margin: 0;
+  max-width: 42em;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.reading--profile-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease;
+  border-radius: 6px;
+  corner-shape: squircle;
+}
+
+.reading--profile-button:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.reading--goodreads-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.reading--content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.reading--section h2 {
+  margin: 0 0 8px 0;
+  color: var(--gray);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.reading--list {
+  display: flex;
+  flex-direction: column;
+}
+
+.reading--item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  width: 100%;
+  padding: 16px 10px;
+  border-top: 1px solid rgba(95, 107, 115, 0.16);
+  transition: background-color 120ms ease;
+}
+
+.reading--item:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.reading--cover {
+  width: 64px;
+  height: 96px;
+  object-fit: cover;
+  background: var(--surface);
+  border-radius: 2px;
+  box-shadow:
+    0 3px 10px rgba(20, 43, 129, 0.1),
+    inset 0 0 0 1px rgba(20, 43, 129, 0.08);
+}
+
+.rated {
+  display: flex;
+  margin-right: 5px;
+}
+
+.reading--cover-empty {
+  display: block;
+  background: linear-gradient(160deg, var(--surface), var(--dark-grey));
+}
+
+.reading--book {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.reading--title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.reading--title {
+  margin: 0;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.reading--favorite {
+  flex-shrink: 0;
+  padding: 3px 5px;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  corner-shape: squircle;
+  color: var(--white);
+  background: var(--orange);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  position: relative;
+  top: -2px;
+}
+
+.reading--link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reading--link:hover {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.reading--byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+  margin: 0;
+  color: var(--gray);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.reading--metadata {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em;
+}
+
+.reading--author {
+  min-width: 0;
+}
+
+.reading--sep {
+  color: var(--gray);
+}
+
+.reading--date {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  color: var(--gray);
+}
+
+.reading--snippet {
+  margin: 3px 0 0 0;
+  max-width: 42em;
+  color: var(--gray);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.reading--rating {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 1px;
+  margin: 0;
+  line-height: 1;
+}
+
+.reading--star {
+  display: flex;
+  margin-top: 1px;
+  color: rgba(95, 107, 115, 0.35);
+  font-size: 12px;
+}
+
+.reading--star.is-filled {
+  color: var(--orange);
+}
+
+.reading--section-current .reading--item {
+  align-items: center;
+}
+
+.reading--section-current .reading--item:last-child,
+.reading--section .reading--item:last-child {
+  border-bottom: 1px solid rgba(95, 107, 115, 0.16);
+}
+
+.reading--section-current .reading--book {
+  padding-top: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .reading--content {
+    gap: 40px;
+  }
+
+  .reading--item {
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 13px;
+    padding: 14px 4px;
+  }
+
+  .reading--cover {
+    width: 52px;
+    height: 78px;
+  }
+
+  .reading--title {
+    font-size: 15px;
+  }
+
+  .reading--byline {
+    justify-content: flex-start;
+    font-size: 12px;
+  }
+
+  .reading--date {
+    font-size: 11px;
+  }
+
+  .reading--snippet {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}

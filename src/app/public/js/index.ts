@@ -69,6 +69,10 @@ function main(): void {
       return 'about';
     }
 
+    if (path === 'reading') {
+      return 'reading';
+    }
+
     if (path === 'work') {
       return 'work';
     }
