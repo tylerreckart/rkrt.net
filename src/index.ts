@@ -7,6 +7,7 @@ import buildAssets from "@app/assets";
 import buildPages from "@app/page";
 import buildPosts from "@app/post";
 import buildHome from "@app/routes/home";
+import buildReading from "@app/routes/reading";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
 import getPosts from "@app/utils/get-posts";
@@ -22,22 +23,26 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-const images = fs.readdirSync(`${__dirname}/../images`);
+const imagesDir = `${__dirname}/../images`;
+const images = fs.readdirSync(imagesDir);
 
 if (images) {
   if (!fs.existsSync(`${outdir}/images`)) {
     fs.mkdirSync(`${outdir}/images`);
   }
 
-  images.forEach(image => {
-    fs.copyFileSync(`${__dirname}/../images/${image}`, `${__dirname}/../build/images/${image}`)
+  images.forEach((image) => {
+    const source = `${imagesDir}/${image}`;
+    if (fs.statSync(source).isFile()) {
+      fs.copyFileSync(source, `${outdir}/images/${image}`);
+    }
   });
 }
 
 const posts: Array<PostType> = getPosts();
 const pages: Array<PageType> = getPages();
 
-export function bundleAssets(): void {
+export async function bundleAssets(): Promise<void> {
   try {
     console.log(colors.yellow("[bundle] building..."));
 
@@ -46,6 +51,21 @@ export function bundleAssets(): void {
     // build pages
     buildHome(posts, outdir);
     buildArchive(posts, outdir);
+    await buildReading(outdir);
+    // Covers land in images/covers during reading build; copy after fetch.
+    const coverDir = `${__dirname}/../images/covers`;
+    if (fs.existsSync(coverDir)) {
+      if (!fs.existsSync(`${outdir}/images/covers`)) {
+        fs.mkdirSync(`${outdir}/images/covers`, { recursive: true });
+      }
+
+      fs.readdirSync(coverDir).forEach((image) => {
+        fs.copyFileSync(
+          `${coverDir}/${image}`,
+          `${outdir}/images/covers/${image}`
+        );
+      });
+    }
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
     // rss/json feeds

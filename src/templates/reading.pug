@@ -1,0 +1,67 @@
+mixin readingBook(book)
+  article.reading--item
+    if book.coverUrl
+      img.reading--cover(src=book.coverUrl, alt="", loading="lazy", width="56", height="84", onerror="var s=document.createElement('span');s.className='reading--cover reading--cover-empty';this.replaceWith(s)")
+    else
+      span.reading--cover.reading--cover-empty(aria-hidden="true")
+    div.reading--book
+      div.reading--title-row
+        h3.reading--title
+          if book.id
+            a.reading--link(href="https://www.goodreads.com/book/show/" + book.id, target="_blank", rel="noopener noreferrer")=book.title
+          else
+            =book.title
+        if book.favorite
+          span.reading--favorite Favorite
+
+      p.reading--byline
+        span.reading--metadata
+          span.reading--author by #[span=book.author]
+          if book.dateRead
+            span.reading--sep ·
+            span Finished on
+            time.reading--date=book.dateRead
+            span.reading--sep ·
+        if book.rating > 0
+          span.reading--rating(aria-label=book.rating + " out of 5")
+            span.rated Rated
+            - for (var i = 1; i <= 5; i++)
+              span(class=i <= book.rating ? "reading--star is-filled" : "reading--star", aria-hidden="true") ★
+      if book.snippet
+        p.reading--snippet=book.snippet
+
+doctype html
+html(lang="en")
+  head
+    title="Reading | " + seo.author
+    meta(name="description", content="Books Tyler Reckart is reading and has read, grouped by year.")
+    include head.pug
+  body
+    include nav.pug
+    div#page
+      main.content
+        div.page--inner
+          div.page--wrapper
+            div.page--header
+              h1 Reading
+            div.reading--intro
+              p A running log of what I'm reading and have finished—mostly anthropology, history, science fiction, and whatever rabbit hole I'm in at the moment.
+              a.reading--profile-button(href="https://www.goodreads.com/tylerreckart", target="_blank", rel="noopener noreferrer")
+                include goodreads-g.pug
+                span Goodreads profile
+
+            div.reading--content
+              if currentlyReading.length
+                section.reading--section.reading--section-current
+                  h2 Currently Reading
+                  div.reading--list
+                    each book in currentlyReading
+                      +readingBook(book)
+
+              each group in years
+                section.reading--section
+                  h2=group.year
+                  div.reading--list
+                    each book in group.books
+                      +readingBook(book)
+    include footer.pug

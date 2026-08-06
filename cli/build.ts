@@ -1,3 +1,7 @@
+import "dotenv/config";
 import { bundleAssets } from "../src";
 
-bundleAssets();
+bundleAssets().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
