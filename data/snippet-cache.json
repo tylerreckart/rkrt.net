@@ -5007,5 +5007,21 @@
       "summary": "Winner of the Pulitzer prize in 1974 and the culminatio…"
     },
     "updatedAt": "2026-08-06T17:01:39.441Z"
+  },
+  "0191666890": {
+    "snippet": null,
+    "source": null,
+    "book": {
+      "id": "25632990",
+      "title": "The Oxford Handbook of Neolithic Europe",
+      "author": "Chris  Fowler",
+      "isbn": "0191666890",
+      "shelf": "currently-reading",
+      "rating": 0,
+      "favorite": false,
+      "dateRead": null,
+      "dateAdded": "2026/08/07"
+    },
+    "updatedAt": "2026-08-09T12:22:40.084Z"
   }
 }

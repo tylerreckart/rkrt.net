@@ -7,6 +7,7 @@
     "build:watch": "nodemon --ignore build",
     "start:dev-server": "npx ts-node ./cli/develop",
     "start:prod-server": "npx ts-node ./cli/server",
+    "sync:goodreads": "npx ts-node ./cli/sync-goodreads",
     "dev": "concurrently \"npm run build:watch\" \"npm run start:dev-server\" --names \"build,server\" --prefix-colors \"cyan,green\"",
     "rollup": "yarn build:static && yarn start:prod-server"
   },

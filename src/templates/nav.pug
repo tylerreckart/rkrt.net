@@ -2,5 +2,14 @@ header
   nav#site--nav
     a(href="/").site--title
       include ghost.pug
-    div.nav--link-container(id="nav")
+    button#mobile-nav-trigger.nav--toggle(
+      type="button",
+      aria-label="Open menu",
+      aria-controls="nav",
+      aria-expanded="false"
+    )
+      span.nav--toggle-bar(aria-hidden="true")
+      span.nav--toggle-bar(aria-hidden="true")
+      span.nav--toggle-bar(aria-hidden="true")
+    div#nav.nav--link-container
       include nav-menu.pug

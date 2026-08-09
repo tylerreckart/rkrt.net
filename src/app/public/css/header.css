@@ -1,7 +1,8 @@
 header {
   display: flex;
   justify-content: center;
-  z-index: 1;
+  position: relative;
+  z-index: 200;
   max-width: 650px;
   width: 100%;
   margin-top: 40px;
@@ -18,8 +19,8 @@ nav#site--nav {
   align-items: center;
   width: 100%;
   color: var(--theme-ui-colors-text);
-  align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 nav a {
@@ -33,6 +34,47 @@ nav a {
   width: 100%;
 }
 
+.nav--toggle {
+  display: none;
+  position: relative;
+  z-index: 220;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav--toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+  transform-origin: center;
+}
+
+.nav--toggle.active .nav--toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav--toggle.active .nav--toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav--toggle.active .nav--toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .nav--link-container {
   flex-direction: row;
   display: flex;
@@ -43,6 +85,8 @@ nav a {
 }
 
 .site--title {
+  position: relative;
+  z-index: 220;
   flex: 0.25;
   align-self: center;
   display: flex;
@@ -77,12 +121,13 @@ nav a {
 
 @media screen and (max-width: 960px) {
   header {
-    margin : 0;
+    margin: 0;
+    max-width: none;
   }
 
   nav#site--nav {
     margin: 0;
-    padding: 20px;
+    padding: 12px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,7 +135,56 @@ nav a {
     width: 100%;
   }
 
+  .nav--toggle {
+    display: inline-flex;
+  }
+
   .nav--link-container {
-    flex: 0.75;
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    flex: none;
+    padding: 96px 28px 48px;
+    background: #f5f4ff;
+    transform: translate3d(0, -12px, 0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
+  }
+
+  .nav--link-container.open {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav--link {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  .nav--link.active {
+    background: var(--black);
+    color: #fff;
+  }
+
+  .nav--link:not(.active):active {
+    background: rgba(20, 43, 129, 0.08);
   }
 }

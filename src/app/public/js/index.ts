@@ -2,36 +2,36 @@
  * Add copy buttons and language badges to code blocks
  */
 function enhanceCodeBlocks(): void {
-  const codeBlocks = document.querySelectorAll('pre > code');
+  const codeBlocks = document.querySelectorAll("pre > code");
 
   codeBlocks.forEach((codeBlock) => {
     const pre = codeBlock.parentElement;
     if (!pre) return;
 
     // Create copy button
-    const copyButton = document.createElement('button');
-    copyButton.className = 'code-copy-button';
-    copyButton.textContent = 'Copy';
-    copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+    const copyButton = document.createElement("button");
+    copyButton.className = "code-copy-button";
+    copyButton.textContent = "Copy";
+    copyButton.setAttribute("aria-label", "Copy code to clipboard");
 
-    copyButton.addEventListener('click', async () => {
-      const code = codeBlock.textContent || '';
+    copyButton.addEventListener("click", async () => {
+      const code = codeBlock.textContent || "";
 
       try {
         await navigator.clipboard.writeText(code);
-        copyButton.textContent = 'Copied!';
-        copyButton.classList.add('copied');
+        copyButton.textContent = "Copied!";
+        copyButton.classList.add("copied");
 
         setTimeout(() => {
-          copyButton.textContent = 'Copy';
-          copyButton.classList.remove('copied');
+          copyButton.textContent = "Copy";
+          copyButton.classList.remove("copied");
         }, 2000);
       } catch (err) {
-        console.error('Failed to copy code:', err);
-        copyButton.textContent = 'Error';
+        console.error("Failed to copy code:", err);
+        copyButton.textContent = "Error";
 
         setTimeout(() => {
-          copyButton.textContent = 'Copy';
+          copyButton.textContent = "Copy";
         }, 2000);
       }
     });
@@ -40,8 +40,7 @@ function enhanceCodeBlocks(): void {
   });
 }
 
-function main(): void {
-  // Set the active state on the nav element for the current page.
+function setActiveNavLink(): void {
   const {
     location: { pathname },
   } = window;
@@ -53,66 +52,83 @@ function main(): void {
   }
 
   const getClass = (): string => {
-    if (path === '/') {
-      return 'home';
+    if (path === "/") {
+      return "home";
     }
 
-    if (path === 'posts') {
-      return 'posts';
+    if (path === "posts") {
+      return "posts";
     }
 
-    if (path === 'projects') {
-      return 'projects';
+    if (path === "projects") {
+      return "projects";
     }
 
-    if (path === 'about') {
-      return 'about';
+    if (path === "about") {
+      return "about";
     }
 
-    if (path === 'reading') {
-      return 'reading';
+    if (path === "reading") {
+      return "reading";
     }
 
-    if (path === 'work') {
-      return 'work';
+    if (path === "work") {
+      return "work";
     }
 
-    return '';
+    return "";
+  };
+
+  const currentPage: HTMLElement | null = document.querySelector(
+    `#nav > .nav--link.${getClass()}`
+  );
+  currentPage?.classList.add("active");
+}
+
+function wireMobileNav(): void {
+  const trigger = document.getElementById("mobile-nav-trigger");
+  const nav = document.getElementById("nav");
+
+  if (!(trigger instanceof HTMLElement) || !(nav instanceof HTMLElement)) {
+    return;
   }
 
-  const currentPage: HTMLElement | null = document.querySelector(`#nav>.nav--link.${getClass()}`);
-  console.log(currentPage);
-  currentPage?.classList.add("active");
+  const setOpen = (open: boolean): void => {
+    trigger.classList.toggle("active", open);
+    nav.classList.toggle("open", open);
+    document.body.classList.toggle("fixed", open);
+    trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    trigger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
 
-  document.body.classList.remove('hidden');
+  const toggle = (): void => {
+    setOpen(!trigger.classList.contains("active"));
+  };
 
-  // Enhance code blocks with copy buttons and language badges
-  enhanceCodeBlocks();
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggle();
+  });
 
-  const mobileMenu: HTMLElement | null = document.getElementById('mobile-nav-trigger');
-  const mobileNav: HTMLElement | null = document.getElementById('mobile-nav');
+  nav.querySelectorAll(".nav--link").forEach((link) => {
+    link.addEventListener("click", () => {
+      setOpen(false);
+    });
+  });
 
-  document.addEventListener('click', (event) => {
-    const { target } = event;
-
-    const isActive = mobileMenu?.classList.contains('active');
-
-    if (target === mobileMenu && !isActive) {
-      document.body.classList.add('fixed');
-      mobileNav?.classList.add('open');
-      mobileMenu?.classList.add('active');
-    } else if (target === mobileMenu && isActive) {
-      document.body.classList.remove('fixed');
-      mobileNav?.classList.remove('open');
-      mobileMenu?.classList.remove('active');
-      mobileMenu?.classList.add('reverse');
-
-      setTimeout(() => {
-        mobileMenu?.classList.remove('reverse');
-      }, 350);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && trigger.classList.contains("active")) {
+      setOpen(false);
+      trigger.focus();
     }
   });
 }
 
-// deno-lint-ignore no-window-prefix
+function main(): void {
+  setActiveNavLink();
+  document.body.classList.remove("hidden");
+  enhanceCodeBlocks();
+  wireMobileNav();
+}
+
 window.addEventListener("load", main);
