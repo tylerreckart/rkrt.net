@@ -1,9 +1,9 @@
 #article-footer {
   width: 100%;
-  background: var(--surface);
+  background: none;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 24px;
 }
 
 footer {

@@ -52,11 +52,12 @@ pre>code::-webkit-scrollbar-thumb:hover {
    Inline Code
    ======================================== */
 
-code {
-  color: var(--gray);
-  background-color: var(--dark-grey);
-  padding: 3px 6px;
-  border-radius: 4px;
+:not(pre)>code {
+  color: #6e3140;
+  background-color: #f6e6e3;
+  padding: 1px 7px;
+  border-radius: 12px;
+  corner-shape: squircle;
   font-weight: 500;
   font-family: var(--font-mono);
   font-size: 14px;
@@ -65,12 +66,11 @@ code {
 a>code {
   text-decoration: none;
   color: var(--black);
-  background-color: rgba(75, 97, 206, 0.08);
-  border-color: rgba(75, 97, 206, 0.15);
+  background-color: #f6e6e3;
 }
 
 a:hover>code {
-  background-color: rgba(75, 97, 206, 0.12);
+  background-color: #f3d9d6;
 }
 
 /* ========================================

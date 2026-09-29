@@ -1,6 +1,7 @@
 include time.pug
 div.next-post--wrapper
   article.next-post--content
+    span.next-post--label Next post
     div.next-post--header
       a(href!="/posts/" + nextPost.path).next-post--title
         h2=nextPost.attributes.title

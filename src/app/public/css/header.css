@@ -107,7 +107,7 @@ nav a {
 }
 
 .nav--link:not(.active):hover {
-  background: var(--dark-grey);
+  background: #f8e6e4;
 }
 
 .nav--link:hover {
@@ -117,6 +117,14 @@ nav a {
 .site--title>h1 {
   font-size: 16px;
   font-weight: 600;
+}
+
+.site--mark {
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 960px) {
@@ -151,7 +159,7 @@ nav a {
     width: 100%;
     flex: none;
     padding: 96px 28px 48px;
-    background: #f5f4ff;
+    background: #f7f1f2;
     transform: translate3d(0, -12px, 0);
     opacity: 0;
     visibility: hidden;
@@ -185,6 +193,6 @@ nav a {
   }
 
   .nav--link:not(.active):active {
-    background: rgba(20, 43, 129, 0.08);
+    background: rgba(166, 69, 88, 0.1);
   }
 }
